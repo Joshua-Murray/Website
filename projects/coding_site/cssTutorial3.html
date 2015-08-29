@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CSS Tutorial</title>
+<meta charset="utf-8">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="css/5grid/init.js?use=mobile,desktop,1200px,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<noscript>
+<link rel="stylesheet" href="css/5grid/core.css">
+<link rel="stylesheet" href="css/5grid/core-desktop.css">
+<link rel="stylesheet" href="css/5grid/core-1200px.css">
+<link rel="stylesheet" href="css/5grid/core-noscript.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style-desktop.css">
+<link rel="stylesheet" href="css/style-1200px.css">
+</noscript>
+<script type="text/javascript">
+tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+d = new Date();
+nday   = d.getDay();
+nmonth = d.getMonth();
+ndate  = d.getDate();
+nyear = d.getYear();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+if(nyear<1000) nyear=nyear+1900;
+
+     ap=""
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+</head>
+<body class="left-sidebar">
+<div id="wrapper">
+  <div id="content" class="mobileUI-main-content">
+    <div id="content-inner">
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2>CSS Tutorial 3</h2>
+        </header>
+
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Child selectors</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">11<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a> 
+		You can also use multiple selectors to get the exact elements you want, by using parental nesting. By using the "greater-than" symbol (&gt;), you can select only the direct children of an element, going down only one level.<br>
+		Example<br>
+		ul &gt; li {<br>
+		display: inline-block<br>
+		}<br><br>
+
+		/* Selects only the first-level list items in all unordered lists in the HTML */<br>
+		Example<br>
+		ul a {<br>
+		text-underline: none;<br>
+		}<br><br>
+
+		/* Selects all anchors which have an unordered list their ancestry */<br>
+		Example<br>
+		ul + span {<br>
+		display: inline;<br>
+		}<br><br>
+
+		/* Selects only spans that directly follow an unordered list */<br>
+		Example<br>
+		a ~ h1 {<br>
+		color: blue;<br>
+		}<br><br>
+
+		/* Selects all h1 elements that are in the general vicinity of an anchor */
+
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Universal selector </a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">12<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a>
+		The universal selector (*) may be used to select all the elements in a particular range. Be aware that the universal selector is the most performance taxing selector, and should be used sparingly.<br>
+		Example<br>
+		* {<br>
+		background-color: blue;<br>
+		}<br><br>
+
+		/* Selects ALL HTML elements in the page */<br>
+		Example<br>
+		body * {<br>
+		color: red;<br>
+		}<br><br>
+
+		/* Selects ALL children of the body */<br>
+		Example<br>
+		div > * {<br>
+		color: red;<br>
+		}<br><br>
+
+		/* Selects ALL first-level children of all divs on the page */<br>
+
+  
+      </article>
+	  <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Pseudo class selectors </a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">13<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a>
+		Pseudo Selectors can be used to narrow down a selection with certain rules.<br>
+		Example<br>
+		li:first-child {<br>
+		color: red;<br>
+		}<br><br>
+
+		/* <br>
+		This selects only &lt;li&gt; elements that have no elements before them<br>
+		&lt;ul&gt;<br>
+		&lt;li&gt;Selected; will be red&lt;/li&gt;<br>
+		&lt;li&gt;Not selected&lt;/li&gt;<br>
+		&lt;li&gt;Not selected&lt;/li&gt;<br>
+		&lt;/ul&gt;<br>
+		*/<br><br>
+
+		li:last-child {<br>
+		color: red;<br>
+		}<br><br>
+
+		/* This does the opposite; only the last &lt;li&gt; will be red. */<br>
+		Example<br>
+		a:hover {<br>
+		text-decoration: underline;<br>
+		}<br><br>
+
+		/* Will underline all links when the user puts their mouse over them */<br><br>
+
+		a:active {<br>
+		font-weight: bold;<br>
+		}<br><br>
+
+		/* Will make all links bold while the user is clicking on them. */
+
+      </article>
+      <div class="pager">
+        <a href="cssTutorial2.html" class="button previous">Previous Page</a>
+        <div class="pages"> <a href="cssTutorial.html">1</a> <a href="cssTutorial2.html">2</a> <a href="cssTutorial3.html" class="active">3</a> </div>
+		</div>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="logo">
+      <h1 class="mobileUI-site-name">WEB DESIGN MADE EASY</h1>
+    </div>
+    <nav id="nav" class="mobileUI-site-nav">
+      <ul>
+        <li class="current_page_item"><a href="#">CSS Tutorial</a></li>
+        <li><a href="index.html">Home</a></li>
+		<li><a href="html.html">HTML</a></li>
+		<li><a href="htmlTutorial.html">HTML Tutorial</a></li>
+		<li><a href="css.html">CSS</a></li>
+        <li><a href="practice.html">Test Your Knowledge</a></li>
+        <li><a href="aboutme.html">About me</a></li>     
+		<li><a href="contactme.html">Contact Me</a></li>
+      </ul>
+    </nav>
+    <section class="is-calendar">
+      <div class="inner">
+			<b><div id="clockbox" style="font-size:;text-align:center;color:white;"></div></b>
+
+
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>HTML Tutorial</title>
+<meta charset="utf-8">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="css/5grid/init.js?use=mobile,desktop,1200px,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<noscript>
+<link rel="stylesheet" href="css/5grid/core.css">
+<link rel="stylesheet" href="css/5grid/core-desktop.css">
+<link rel="stylesheet" href="css/5grid/core-1200px.css">
+<link rel="stylesheet" href="css/5grid/core-noscript.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style-desktop.css">
+<link rel="stylesheet" href="css/style-1200px.css">
+</noscript>
+<script type="text/javascript">
+tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+d = new Date();
+nday   = d.getDay();
+nmonth = d.getMonth();
+ndate  = d.getDate();
+nyear = d.getYear();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+if(nyear<1000) nyear=nyear+1900;
+
+     ap=""
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+</head>
+<body class="left-sidebar">
+<div id="wrapper">
+  <div id="content" class="mobileUI-main-content">
+    <div id="content-inner">
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2>HTML Tutorial</h2>
+        </header>
+        <p>HTML Tutorial Page 1, which shows you how to create the framework of the website. There is no colour on a webpage unless you use CSS. </p>
+      </article>
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2>Attributes</h2>
+		</header>
+        <div class="info"> <span class="date"><span class="month">1<span></span></span> <span class="day"></span><span class="year"></span></span>
+        </div>
+		<h3>Class </h3>
+		HTML elements can have one or more classes, separated by spaces. You can style elements using CSS by selecting them with their classes.<br>
+		Example<br>
+		&lt;div class="big-box yellow-box">This is a big yellow box.&lt;/div&gt;
+		
+		<h3>Id</h3> 
+		An HTML element can have an id attribute to identify it.<br>
+		Id elements should always be unique to that single element, and each element should never have more than one id.<br>
+		Example<br>
+		&lt;div id="my-box"&gt;This is my box! Put your text in some other box.&lt;/div&gt;
+		
+		<h3>href</h3>
+		Links tell the browser where to go using an href attribute, which stores a URL.<br>
+		Example<br>
+		&lt;a href="http://google.com"&gt;Google it&lt;/a&gt;
+
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Basic Formatting</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">2<span></span></span> <span class="day"></span><span class="year"></span></span>
+
+        </div>
+		You can easily format text to be bold, italic, or underlined using simple formatting tags.<br>
+		Example<br>
+		This text is &lt;b&gt;bold&lt;/b&gt;, &lt;i&gt;italicized&lt;/i&gt;, and &lt;u&gt;underlined&lt;/u&gt;.
+		
+		<h3>Body</h3>
+		The body is the container for all of a page's content. Comes after the &lt;head&gt; tag, within the overall &lt;html&gt; tag.<br>
+		Example<br>
+		&lt;html&gt;<br>
+		&lt;head&gt;<br>
+		&lt;title&gt;An example of the body tag&lt;/title&gt;<br>
+		&lt;/head&gt;<br>
+		&lt;body&gt;<br>
+		This is inside the body!<br>
+		&lt;/body&gt;<br>
+		&lt;/html&gt;
+
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Usage </a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">3<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        
+		Almost all content belongs inside the body tag. The main exceptions are script and style tags, as well as the page title tag. As you can see in this example, there is a heading, an image, and a link all inside the body tag. The head tag contains only external files and the page title.<br>
+		Example<br>
+		&lt;html&gt;<br>
+		&lt;head&gt;<br>
+		&lt;title&gt;My homepage&lt;/title&gt;<br>
+		&lt;link rel="stylesheet" type="text/css" href="homepage.css" /&gt;<br>
+		&lt;script type="text/javascript" src="homepage.js">&lt;/script&gt;<br>
+		&lt;/head&gt;<br>
+		&lt;body&gt;<br>
+		&lt;h1&gt;Hello, this is a picture of my cat!&lt;/h1&gt;<br>
+		&lt;img src="cat.jpg" /&gt;<br>
+		&lt;/body&gt;<br>
+		&lt;/html&gt;
+		
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Children</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">4<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+		An element that is an immediate descendent of another element or nested within another element is called a child. These become useful when using CSS child selectors and psuedo-elements.<br>
+		Example<br>
+		&lt;ul id="parent"&gt;<br>
+		&lt;li id="child"&gt;I'm a child of parent&lt;/li&gt;<br>
+		&lt;/ul&gt;
+		
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Comments</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">5<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        
+		HTML comments are sometimes used in code to explain parts of the markup. They are similar to comments in other languages. Users do not see comments in their browser.<br>
+		Syntax<br>
+		&lt;!-- This is an HTML comment --&gt;
+		
+      </article>
+
+      <div class="pager">
+        <!--<a href="#" class="button previous">Previous Page</a>-->
+        <div class="pages"> <a href="htmlTutorial.html" class="active">1</a> <a href="htmlTutorial2.html">2</a> <a href="htmlTutorial3.html">3</a> <a href="htmlTutorial4.html">4</a> </div>
+		<a href="htmlTutorial2.html" class="button next">Next Page</a></div>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="logo">
+      <h1 class="mobileUI-site-name">WEB DESIGN MADE EASY</h1>
+    </div>
+    <nav id="nav" class="mobileUI-site-nav">
+      <ul>
+        <li class="current_page_item"><a href="#">HTML Tutorial</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="html.html">HTML</a></li>
+		<li><a href="css.html">CSS</a></li>
+        <li><a href="cssTutorial.html">CSS Tutorial</a></li>
+        <li><a href="practice.html">Test Your Knowledge</a></li>
+        <li><a href="aboutme.html">About me</a></li>     
+		<li><a href="contactme.html">Contact Me</a></li>
+      </ul>
+    </nav>
+    <section class="is-calendar">
+      <div class="inner">
+			<b><div id="clockbox" style="font-size:;text-align:center;color:white;"></div></b>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

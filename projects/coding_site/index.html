@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Web Design Made Easy</title>
+<meta charset="utf-8">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="css/5grid/init.js?use=mobile,desktop,1200px,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<noscript>
+<link rel="stylesheet" href="css/5grid/core.css">
+<link rel="stylesheet" href="css/5grid/core-desktop.css">
+<link rel="stylesheet" href="css/5grid/core-1200px.css">
+<link rel="stylesheet" href="css/5grid/core-noscript.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style-desktop.css">
+<link rel="stylesheet" href="css/style-1200px.css">
+</noscript>
+<script type="text/javascript">
+tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+d = new Date();
+nday   = d.getDay();
+nmonth = d.getMonth();
+ndate  = d.getDate();
+nyear = d.getYear();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+if(nyear<1000) nyear=nyear+1900;
+
+     ap=""
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+</head>
+<body class="left-sidebar">
+<div id="wrapper">
+  <div id="content" class="mobileUI-main-content">
+    <div id="content-inner">
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2 style="text-align:center;">Welcome to Web Design Made Easy</h2>
+        </header>
+        <img src="images/home.jpeg" class="image image-full">
+        <p>This is Web Design Made Easy, a fully responsive HTML5 site template. It features a clean minimalistic design styling for all basic page elements. Including blockquotes, tables and lists. It also has a repositionable left or right sidebar. </p>
+      </article>
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="html.html">HyperText Markup Language</a></h2>
+          <span class="byline">The basics of HTML</span> </header>
+        <div class="info"> <span class="date"><span class="month">Step<span></span></span> <span class="day">1</span><span class="year"></span></span>
+			
+        </div>
+        <img src="images/html.jpg" class="image image-full">
+        <p> This will help you learn HTML so you can build your own website. Look at the Tutorial page to start.</p>
+      </article>
+    
+	<article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="css.html">Cascading Style Sheet</a></h2>
+        <span class="byline">Improve the display</span></header>
+        <div class="info"> <span class="date"><span class="month">Step<span></span></span> <span class="day">2</span><span class="year"></span></span>
+				
+        </div>
+        <img src="images/css.jpg" class="image image-full" alt="">
+        <p> This will help you learn CSS, so you can make your website more colourful and more organised. </p>
+      </article>
+     
+	 <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="practice.html">Test Your Knowledge</a></h2>
+          <span class="byline">Practice what you have learnt</span> 
+		  </header>
+        <div class="info"> <span class="date"><span class="month">Step<span></span></span> <span class="day">3</span><span class="year"></span></span>
+			
+        </div>
+        <img src="images/theoryintopractice.jpg" class="image image-full">
+        <p> Here you will be able to enter your HTML and CSS code into a text area where you will be able to see what each input does. </p>
+      </article>	  
+
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="logo">
+      <h1 class="mobileUI-site-name">WEB DESIGN MADE EASY</h1>
+    </div>
+    <nav id="nav" class="mobileUI-site-nav">
+      <ul>
+        <li class="current_page_item"><a href="#">Home</a></li>
+        <li><a href="html.html">HTML</a></li>
+		<li><a href="htmlTutorial.html">HTML Tutorial</a></li>
+		<li><a href="css.html">CSS</a></li>
+        <li><a href="cssTutorial.html">CSS Tutorial</a></li>
+        <li><a href="practice.html">Test Your Knowledge</a></li>
+        <li><a href="aboutme.html">About me</a></li>     
+		<li><a href="contactme.html">Contact Me</a></li>
+      </ul>
+    </nav>
+
+    <section class="is-text-style1">
+      <div class="inner">
+        <p> <strong>Web Design Made Easy:</strong> Fully responsive HTML5 site</p>
+      </div>
+    </section>
+    <section class="is-calendar">
+      <div class="inner">
+			<b><div id="clockbox" style="font-size:;text-align:center;color:white;"></div></b>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

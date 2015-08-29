@@ -1,0 +1,135 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+    <title>Openet | Guest Sign Out</title>
+    
+    <link rel="stylesheet" href="css/foundation.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css'/>
+    
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/vendor/jquery.js"></script> 
+    <script src="js/foundation.js"></script> 
+    <script src="js/foundation.dropdown.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
+</head>
+<script type="text/javascript" >
+        $(function startup() {
+                    $.ajax({
+                        type: "POST",
+                        url: "testopenet.php",
+                        data: {
+                            action:'current'
+                        },
+                        success: function(responce){
+							 $('#resultTable').html(responce);
+							//alert(responce);
+                          //  $('.success').fadeIn(200).show();
+                            //$('.error').fadeOut(200).hide();
+                        }
+           
+             });
+         });
+
+    </script>
+<body onload="startup()">
+<!-- Top Bar Navigation -->
+	<nav class="top-bar" data-topbar>
+		<section>
+			<ul class="title-area">
+              <!-- Title Area -->
+              <li class="name"><h1><a href="index.html"></a></h1></li>
+			</ul>
+      
+            <div class="toggle-topbar menu-icon">
+				<a href="#"><span>MENU</span></a>
+			</div>
+			
+			<ul>
+				<section class="top-bar-section">
+					<!-- Right Nav Section -->
+						<ul class="right">
+							<li class="divider"></li>
+							<li><a href="index.html">Home</a></li>
+							<li class="divider"></li>			  
+							<li class="has-form"><a href="all.php" name="currentPeople" onclick="printAll()"  name="printall" class="button alert">Print all at Openet</a></li>
+						</ul>
+				</section>
+			</ul>
+		</section>  
+    </nav>
+<!-- End Top Bar Navigation -->
+
+<!-- Top Banner -->
+<div class="show-for-medium-up">
+	<div class="topbannerrest">
+		<div class="row">
+			<br>
+			<div class="medium-12 large-12 columns">
+				<img src="css/openet_logo_lg.png">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Top Banner -->
+  
+<!-- Page Title -->
+<div class="row">
+	<div class="large-12 columns">
+      <div class="large-12 columns">
+		<br>
+        <h3>Openet Guest Log System</h3>
+		<a href="index.html" class="button openet align right tiny">Go Back</a>
+        <h5>Sign Guest Out</h5>
+      </div>
+    </div>
+    <hr><br>
+</div>
+<!-- End Page Title -->
+
+<!-- Table To Show Visitors Signed In (Currently Populated With Dummy Text) -->
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel"> 
+			<p>Visitors Currently Signed In:</p>
+			<center>
+				<table>
+					<thead>
+						<tr>
+							<th width="200">First Name</th>
+							<th width="200">Surname</th>
+							<th width="200">Company</th>
+							<th width="300">Phone Number</th>
+							<th width="100">Sign Out</th>
+						</tr>
+					</thead>
+					<tbody id="resultTable">
+						
+					</tbody>
+				</table>
+			</center>
+		</div>
+	</div>
+</div>
+<!-- End Table Showing Visitors Signed In -->
+
+<!-- Foundation Script -->
+<script>
+  document.write('<script src=js/vendor/' +
+  ('__proto__' in {} ? 'zepto' : 'jquery') +
+  '.js><\/script>')
+</script>
+<script src="js/foundation.min.js"></script>
+<script>
+   $(document).foundation();
+</script>
+<!-- End Foundation Script -->
+
+</body>
+</html>
+
+

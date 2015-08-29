@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>HTML Tutorial</title>
+<meta charset="utf-8">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="css/5grid/init.js?use=mobile,desktop,1200px,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<noscript>
+<link rel="stylesheet" href="css/5grid/core.css">
+<link rel="stylesheet" href="css/5grid/core-desktop.css">
+<link rel="stylesheet" href="css/5grid/core-1200px.css">
+<link rel="stylesheet" href="css/5grid/core-noscript.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style-desktop.css">
+<link rel="stylesheet" href="css/style-1200px.css">
+</noscript>
+<script type="text/javascript">
+tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+d = new Date();
+nday   = d.getDay();
+nmonth = d.getMonth();
+ndate  = d.getDate();
+nyear = d.getYear();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+if(nyear<1000) nyear=nyear+1900;
+
+     ap=""
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+</head>
+<body class="left-sidebar">
+<div id="wrapper">
+  <div id="content" class="mobileUI-main-content">
+    <div id="content-inner">
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2>HTML Tutorial 4</h2>
+        </header>
+      </article>
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2>Paragraphs</h2>
+		</header>
+        <div class="info"> <span class="date"><span class="month">16<span></span></span> <span class="day"></span><span class="year"></span></span>
+        </div>
+		&lt;p&gt;<br>
+		One of the most common tags in HTML - it denotes a paragraph of text. It often has other elements nested inside of it, such as &lt;img/&gt;, &lt;a&gt;, &lt;strong&gt; and &lt;em&gt;.<br>
+		Syntax<br>
+		&lt;p&gt;This is paragraph text!&lt;/p&gt;
+		
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Semantic formatting</a></h2>
+         </header>
+        <div class="info"> <span class="date"><span class="month">17<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a>
+		These tags are similar to the previously mentioned formatting tags which have fallen out of favor. The difference is that these tags have semantic value (meaning). &lt;em&gt; is used for something that you wish to emphasize and &lt;strong&gt; is used for something that is important. With both of these elements, you can convey the level of emphasis or importance with nesting. The more times that you nest the element within itself, the higher the magnitude of the text it contains.<br>
+		Example<br>
+		&lt;p&gt; &lt;strong&gt;&lt;strong&gt;Warning:&lt;/strong&gt;Acid can cause severe burns&lt;/strong&gt; &lt;/p&gt;
+
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Tables</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">18<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a> 
+		An element for displaying information in rows and columns. Supports headers and footers for labeling columns. Divides information into rows (denoted by the tr tag) which contain cells (denoted by the td tag).<br>
+		Example<br>
+		&lt;table&gt;<br>
+		&lt;thead&gt;<br>
+		&lt;tr&gt;<br>
+		&lt;th&gt;Item&lt;/th&gt;<br>
+		&lt;th&gt;Price&lt;/th&gt;<br>
+		&lt;/tr&gt;<br>
+		&lt;/thead&gt;<br><br>
+
+		&lt;tbody&gt;<br>
+		&lt;tr&gt;<br>
+		&lt;td&gt;Banana&lt;/td&gt;<br>
+		&lt;td&gt;$56.75&lt;/td&gt;<br>
+		&lt;/tr&gt;<br>
+		&lt;tr&gt;<br>
+		&lt;td&gt;Yogurt&lt;/td&gt;<br>
+		&lt;td&gt;$12.99&lt;/td&gt;<br>
+		&lt;/tr&gt;<br>
+		&lt;/tbody&gt;<br><br>
+	
+		&lt;tfoot&gt;<br>
+		&lt;tr&gt;<br>
+		&lt;td&gt;Total&lt;/td&gt;<br>
+		&lt;td&gt;$69.74&lt;/td&gt;<br>
+		&lt;/tr&gt;<br>
+		&lt;/tfoot&gt;<br>
+		&lt;/table&gt;
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Tags & Elements </a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">19<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a>
+		Tags are basic labels that define and separate parts of your markup into elements. They are comprised of a keyword surrounded by angle brackets &lt;&gt;. Content goes between two tags and the closing one is prefixed with a slash (Note: there are some self-closing HTML tags, like image tags). Tags also have attributes, which are
+		Syntax
+		&lt;tag attribute='value'&gt;content&lt;/tag keyword&gt;
+  
+      </article>
+	  <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Title</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">20<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a>
+		This tag tells the browser what to display as the page title at the top and tells search engines what the title of your site is. It goes inside &lt;head&gt; tags. Try and make your page titles descriptive, but not overly verbose.<br>
+		Example<br>
+		&lt;title&gt; HTML Tutorial &lt;/title&gt;	  
+      </article>
+      <div class="pager">
+        <a href="htmlTutorial3.html" class="button previous">Previous Page</a>
+        <div class="pages"> <a href="htmlTutorial.html">1</a> <a href="htmlTutorial2.html">2</a> <a href="htmlTutorial3.html">3</a> <a href="htmlTutorial4.html" class="active">4</a> </div>
+		</div>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="logo">
+      <h1 class="mobileUI-site-name">WEB DESIGN MADE EASY</h1>
+    </div>
+    <nav id="nav" class="mobileUI-site-nav">
+      <ul>
+        <li class="current_page_item"><a href="#">HTML Tutorial</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="html.html">HTML</a></li>
+		<li><a href="css.html">CSS</a></li>
+        <li><a href="cssTutorial.html">CSS Tutorial</a></li>
+        <li><a href="practice.html">Test Your Knowledge</a></li>
+        <li><a href="aboutme.html">About me</a></li>     
+		<li><a href="contactme.html">Contact Me</a></li>
+      </ul>
+    </nav>
+    <section class="is-calendar">
+      <div class="inner">
+			<b><div id="clockbox" style="font-size:;text-align:center;color:white;"></div></b>
+
+
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

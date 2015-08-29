@@ -1,0 +1,136 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+    <title>Openet | Home</title>
+    
+    <link rel="stylesheet" href="css/foundation.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css'>
+    
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/vendor/jquery.js"></script> 
+    <script src="js/foundation.js"></script> 
+    <script src="js/foundation.dropdown.js"></script>
+</head>
+
+<body>
+
+<!-- Top Bar Navigation -->
+	<nav class="top-bar" data-topbar>
+		<section>
+			<ul class="title-area">
+              <!-- Title Area -->
+              <li class="name"><h1><a href="index.html"></a></h1></li>
+			</ul>
+      
+            <div class="toggle-topbar menu-icon">
+				<a href="#"><span>MENU</span></a>
+			</div>
+			
+			<ul>
+				<section class="top-bar-section">
+					<!-- Right Nav Section -->
+						<ul class="right">
+							<li class="divider"></li>
+							<li><a href="index.html">Home</a></li>
+							<li class="divider"></li>			  
+							<li class="has-form"><a href="#" name="currentPeople" id="printAll"  name="printall" class="button alert">Print all at Openet</a></li>
+						</ul>
+				</section>
+			</ul>
+		</section>  
+    </nav>
+
+<!-- End Top Bar Navigation -->
+ <script>
+ $(function() {
+            $("#printAll").click(function(){                                                            
+               window.location="all.php";
+               window.print();
+              // window.location="index.html";
+               })
+ });
+</script>
+
+<!-- Top Banner -->
+<div class="show-for-medium-up">
+	<div class="topbannerrest">
+		<div class="row">
+			<br>
+			<div class="medium-12 large-12 columns">
+				<img src="css/openet_logo_lg.png">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Top Banner -->
+  
+<!-- Page Title -->
+<div class="row">
+	<div class="large-12 columns">
+      <div class="large-12 columns">
+		<br>
+        <h3>Openet Guest Log System</h3>
+        <h5>Home</h5>
+      </div>
+    </div>
+    <hr><br>
+</div>
+<!-- End Page Title -->
+
+<!-- New Guset Link -->
+<div class="row">
+    <div class="medium-2 columns">
+		<a href="form.html"><img src="img/Openet/service_innovation.png"></a>
+	</div>
+	<div class="large-10 columns">
+		<h4><a href="form.html">New Guest</a></h4>		 
+		<p>Sign in a new person, saving them to the database. Print an identification label.</p>
+	</div>
+</div>
+
+<br><br>
+
+<!-- Previous Guest Link -->	
+<div class="row">
+    <div class="medium-2 columns">
+		<a href="existingform.html"><img src="img/Openet/az_solutions.png"></a>
+	</div>
+	<div class="large-10 columns">
+		 <h4><a href="existingform.html">Previous Guest</a></h4>
+		 <p>Sign in previous visitors by searching the database. Edit their details. Print identification labels. Delete profiles.</p>
+	</div>
+</div>
+
+<br><br>
+
+<!-- Sign Guest Out Link -->
+<div class="row">
+    <div class="medium-2 columns">
+		<a href="signvisitorout.html"><img src="img/Openet/services_hwd.png"></a>
+	</div>
+	<div class="large-10 columns">
+		<h4><a href="signvisitorout.html">Sign Guest Out</a></h4>
+		<p>Sign a visitor out when they leave.</p>
+	</div>
+</div>
+
+<!-- Foundation Script -->
+<script>
+  document.write('<script src=js/vendor/' +
+  ('__proto__' in {} ? 'zepto' : 'jquery') +
+  '.js><\/script>')
+</script>
+
+<script src="js/foundation.min.js"></script>
+<script>
+	$(document).foundation();
+</script>
+<!-- End Foundation Script -->
+
+</body>
+</html>

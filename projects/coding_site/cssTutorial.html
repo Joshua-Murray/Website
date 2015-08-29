@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CSS Tutorial</title>
+<meta charset="utf-8">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="css/5grid/init.js?use=mobile,desktop,1200px,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<noscript>
+<link rel="stylesheet" href="css/5grid/core.css">
+<link rel="stylesheet" href="css/5grid/core-desktop.css">
+<link rel="stylesheet" href="css/5grid/core-1200px.css">
+<link rel="stylesheet" href="css/5grid/core-noscript.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style-desktop.css">
+<link rel="stylesheet" href="css/style-1200px.css">
+</noscript>
+<script type="text/javascript">
+tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+d = new Date();
+nday   = d.getDay();
+nmonth = d.getMonth();
+ndate  = d.getDate();
+nyear = d.getYear();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+if(nyear<1000) nyear=nyear+1900;
+
+     ap=""
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+</head>
+<body class="left-sidebar">
+<div id="wrapper">
+  <div id="content" class="mobileUI-main-content">
+    <div id="content-inner">
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2>CSS Tutorial</h2>
+        </header>
+        <p>This is the CSS Tutorial Page 1, which shows you how to create the framework of the website, note: there is no colour on this unless you style them. </p>
+      </article>
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2>Comments</h2>
+		</header>
+        <div class="info"> <span class="date"><span class="month">1<span></span></span> <span class="day"></span><span class="year"></span></span>
+        </div>
+		Comments in CSS are signified by a forward-slash and asterisk.<br>
+			
+				Example<br>
+				/* This is a single line comment */<br><br>
+			
+				Example<br>
+				/* This <br>
+				is a multi-line<br>
+				comment */
+		
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Properties</a></h2>
+         </header>
+        <div class="info"> <span class="date"><span class="month">2<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        
+			<h3>Definition</h3>
+			Properties are defined within selectors by defining a property and a value. They are separated with a colon and delineated with a semi-colon.<br>
+				Syntax<br>
+				selector{<br>
+				property: value;<br>
+				}<br><br>
+
+				Example<br>
+				h1{<br>
+				color: red;<br>
+				}
+
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Defining many properties</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">3<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+         
+			Each CSS rule can have as many properties as you like. Each of them applies to the elements that the selector applies to.<br>
+				Example<br>
+				h1 {<br>
+				font-size: 24px;<br>
+				font-weight: bold;<br>
+				border: 1px solid black;<br>
+				color: pink;<br>
+				}<br>
+			/* This will make all &lt;h1&gt; headers big, bold, pink, and inside of a thin black rectangle! */
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Padding</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">4<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        
+		The padding is the spacing between the content and the border (edge of the element). We can adjust this value with CSS to move the border closer to or farther from the content. Here, the div with id 'box' will get 10px of padding all around it.<br>
+			
+				Example<br>
+				#box {<br>
+				padding: 10px;<br>
+			}
+  
+      </article>
+	  <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Margin</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">5<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        
+			The margin is the space around the element. The larger the margin, the more space between our element and the elements around it.
+			We can adjust the margin to move our HTML elements closer to or farther from each other. Here the div with id 'box' will get 10px of margin above and below it
+			and 5px of margin to the left and right.<br>
+			
+				Example<br>
+				#box {<br>
+				margin: 10px 5px 10px 5px;<br>
+				}
+      </article>
+      <div class="pager">
+        <div class="pages"> <a href="cssTutorial.html" class="active">1</a> <a href="cssTutorial2.html">2</a> <a href="cssTutorial3.html">3</a> </div>
+		<a href="cssTutorial2.html" class="button next">Next Page</a></div>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="logo">
+      <h1 class="mobileUI-site-name">WEB DESIGN MADE EASY</h1>
+    </div>
+    <nav id="nav" class="mobileUI-site-nav">
+      <ul>
+        <li class="current_page_item"><a href="#">CSS Tutorial</a></li>
+        <li><a href="index.html">Home</a></li>
+		<li><a href="html.html">HTML</a></li>
+		<li><a href="htmlTutorial.html">HTML Tutorial</a></li>
+		<li><a href="css.html">CSS</a></li>
+        <li><a href="practice.html">Test Your Knowledge</a></li>
+        <li><a href="aboutme.html">About me</a></li>     
+		<li><a href="contactme.html">Contact Me</a></li>
+      </ul>
+    </nav>
+    <section class="is-calendar">
+      <div class="inner">
+			<b><div id="clockbox" style="font-size:;text-align:center;color:white;"></div></b>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

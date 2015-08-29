@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>HTML Tutorial</title>
+<meta charset="utf-8">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="css/5grid/init.js?use=mobile,desktop,1200px,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<noscript>
+<link rel="stylesheet" href="css/5grid/core.css">
+<link rel="stylesheet" href="css/5grid/core-desktop.css">
+<link rel="stylesheet" href="css/5grid/core-1200px.css">
+<link rel="stylesheet" href="css/5grid/core-noscript.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style-desktop.css">
+<link rel="stylesheet" href="css/style-1200px.css">
+</noscript>
+<script type="text/javascript">
+tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+d = new Date();
+nday   = d.getDay();
+nmonth = d.getMonth();
+ndate  = d.getDate();
+nyear = d.getYear();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+if(nyear<1000) nyear=nyear+1900;
+
+     ap=""
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+</head>
+<body class="left-sidebar">
+<div id="wrapper">
+  <div id="content" class="mobileUI-main-content">
+    <div id="content-inner">
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2>HTML Tutorial 2</h2>
+        </header>
+      </article>
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2>Div</h2>
+		</header>
+        <div class="info"> <span class="date"><span class="month">6<span></span></span> <span class="day"></span><span class="year"></span></span>
+        </div> 
+		A block level container or 'division' of the web page, for content with no semantic meaning.<br>
+		Syntax<br>
+		&lt;div&gt;This is a div element.&lt;/div&gt;
+		
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Head</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">7<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a>		
+		A head tag surrounds important content that is invisible to the user, but is important to the browser. Elements within this tag contain metadata about the page and links to stylesheets, scripts, etc.<br>
+		Headings<br>
+		Heading elements like &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, ... allow you to use six levels of document headings, ranging from largest to smallest, breaking up the document into logical sections. For example, the word 'Headings' above is wrapped in a &lt;h2&gt; tag.<br>
+		Syntax<br>
+		&lt;h1&gt; This is a header &lt;/h1&gt;
+		
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Horizontal rules</a></h2>
+		</header>
+        <div class="info"> <span class="date"><span class="month">8<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a>
+		This tag creates a black line, one pixel thick that runs the all the way across its container. It can be styled to look differently with CSS.<br>
+		Example<br>
+		This text is divided<br>
+		&lt;hr&gt;<br>
+		...from this text
+
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">HTML</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">9<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a> 
+		<h3>What is HTML?</h3>
+		HTML stands for Hyper Text Markup Language. It is the language used to create all websites.<br>
+		&lt;html&gt; tag <br>
+		All HTML files live within an over-arching html tag. This is the basic tag that defines an html document.<br>
+		Syntax<br>
+		&lt;html&gt;<br>
+		The rest of your web page goes in here<br>
+		&lt;/html&gt;
+		
+      </article>
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Hyperlinks</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">10<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a> 
+		Hyperlinks (or just links) take the user to another webpage when people click on it. The most common attribute used with links is href, which tells the browser where the link goes.<br>
+		Syntax<br>
+		&lt;a href="url this link goes to"&gt;Link text&lt;/a&gt;<br>
+		Example<br>
+		&lt;a href="http://google.com"&gt;goes to Google&lt;/a&gt;.
+		
+      </article>
+
+      <div class="pager">
+        <a href="htmlTutorial.html" class="button previous">Previous Page</a>
+        <div class="pages"> <a href="htmlTutorial.html">1</a> <a href="htmlTutorial2.html" class="active">2</a> <a href="htmlTutorial3.html">3</a> <a href="htmlTutorial4.html">4</a> </div>
+		<a href="htmlTutorial3.html" class="button next">Next Page</a></div>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="logo">
+      <h1 class="mobileUI-site-name">WEB DESIGN MADE EASY</h1>
+    </div>
+    <nav id="nav" class="mobileUI-site-nav">
+      <ul>
+        <li class="current_page_item"><a href="#">HTML Tutorial</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="html.html">HTML</a></li>
+		<li><a href="css.html">CSS</a></li>
+        <li><a href="cssTutorial.html">CSS Tutorial</a></li>
+        <li><a href="practice.html">Test Your Knowledge</a></li>
+        <li><a href="aboutme.html">About me</a></li>     
+		<li><a href="contactme.html">Contact Me</a></li>
+      </ul>
+    </nav>
+    <section class="is-calendar">
+      <div class="inner">
+			<b><div id="clockbox" style="font-size:;text-align:center;color:white;"></div></b>
+
+
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

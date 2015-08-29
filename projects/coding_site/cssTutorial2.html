@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CSS Tutorial</title>
+<meta charset="utf-8">
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="css/5grid/init.js?use=mobile,desktop,1200px,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+<noscript>
+<link rel="stylesheet" href="css/5grid/core.css">
+<link rel="stylesheet" href="css/5grid/core-desktop.css">
+<link rel="stylesheet" href="css/5grid/core-1200px.css">
+<link rel="stylesheet" href="css/5grid/core-noscript.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style-desktop.css">
+<link rel="stylesheet" href="css/style-1200px.css">
+</noscript>
+<script type="text/javascript">
+tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+d = new Date();
+nday   = d.getDay();
+nmonth = d.getMonth();
+ndate  = d.getDate();
+nyear = d.getYear();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+if(nyear<1000) nyear=nyear+1900;
+
+     ap=""
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+</head>
+<body class="left-sidebar">
+<div id="wrapper">
+  <div id="content" class="mobileUI-main-content">
+    <div id="content-inner">
+      <article class="is-post is-post-excerpt">
+        <header>
+          <h2>CSS Tutorial 2</h2>
+        </header>
+
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Selectors</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">6<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a> 
+		 
+		<h3>What are selectors? </h3>
+		Selectors are used in CSS to select the parts of the HTML that are being styled. You can use several different methods for selecting an element.<br>
+		Syntax<br>
+		selector {<br>
+		rules;<br>
+		rules;<br>
+		rules;<br>
+		}
+
+      </article>
+     <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Class name selectors </a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">7<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a>
+		You can also select HTML elements by their Class name. Unlike ID selectors, Class selectors select all elements with a matching class.<br>
+		Example<br>
+		a.link {<br>
+		font-size: 12px;<br>
+		}<br><br>
+
+		/* HTML Selected: &lt;a href="http://google.com" class="link"&gt;, <br>
+		&lt;a href="http://google.com" class="link jumbo"&gt; */<br>
+		Example<br>
+		.jumbo {<br>
+		text-size: 1000px;<br>
+		}<br><br>
+
+		/* HTML Selected: &lt;a href="http://google.com" class="link jumbo"&gt;,<br>
+		&lt;span class="jumbo"&gt; */
+
+
+  
+      </article>
+	  <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Element selectors</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">8<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a>
+		You are able to select HTML elements first by simply using the name of the element.<br>
+		Example<br>
+		body {<br>
+		background-color: #333;<br>
+		}<br><br>
+		Example<br>
+		h1 {<br>
+		color: blue;<br>
+		}<br>
+		Example<br>
+		a {<br>
+		text-underline: none;<br>
+		}
+
+      </article>
+	  <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">ID selectors</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">9<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a>
+		ID selectors are used to select only a single item on a page. Like the term "identification" indicates. ID selectors will ONLY select the first element with a matching ID.<br>
+		Example<br>
+		#thatThingINeededToStyle {<br>
+		color: blue;<br>
+		font-size: 24px;<br>
+		}<br><br>
+
+		/* HTML Selected: &lt;span id="thatThingINeededToStyle"&gt; */<br>
+		Example<br>
+		a#google {<br>
+		color: purple;<br>
+		}<br><br>
+
+		/* HTML Selected: &lt;a href="http://google.com" id="google"&gt; */
+
+
+      </article>
+	   <article class="is-post is-post-excerpt">
+        <header>
+          <h2><a href="#">Attribute selectors</a></h2>
+        </header>
+        <div class="info"> <span class="date"><span class="month">10<span></span></span> <span class="day"></span><span class="year"></span></span>
+			
+        </div>
+        <a href="#" class="image image-full"><img src="" alt=""></a>
+		HTML elements are also able to be selected by their attributes.<br>
+		Example<br>
+		a[href="http://google.com"] {<br>
+		color: purple;<br>
+		}<br><br>
+
+		/* HTML Selected: &lt;a href="http://google.com"&gt; */<br>
+		Example<br>
+		input[type="text"] {<br>
+		width: 100px;<br>
+		}<br><br>
+	
+		/* HTML Selected: &lt;input type="text"&gt; */<br>
+		Example<br>
+		input[required] {<br>
+		border: 1px red solid;<br>
+		}<br><br>
+
+		/* HTML Selected: &lt;input type="text" required&gt; */
+
+
+      </article>
+      <div class="pager">
+        <a href="cssTutorial.html" class="button previous">Previous Page</a>
+        <div class="pages"> <a href="cssTutorial.html">1</a> <a href="cssTutorial2.html" class="active">2</a> <a href="cssTutorial3.html" >3</a></div>
+		<a href="cssTutorial3.html" class="button next">Next Page</a></div>
+    </div>
+  </div>
+  <div id="sidebar">
+    <div id="logo">
+      <h1 class="mobileUI-site-name">WEB DESIGN MADE EASY</h1>
+    </div>
+    <nav id="nav" class="mobileUI-site-nav">
+      <ul>
+        <li class="current_page_item"><a href="#">CSS Tutorial</a></li>
+        <li><a href="index.html">Home</a></li>
+		<li><a href="html.html">HTML</a></li>
+		<li><a href="htmlTutorial.html">HTML Tutorial</a></li>
+		<li><a href="css.html">CSS</a></li>
+        <li><a href="practice.html">Test Your Knowledge</a></li>
+        <li><a href="aboutme.html">About me</a></li>     
+		<li><a href="contactme.html">Contact Me</a></li>
+      </ul>
+    </nav>
+    <section class="is-calendar">
+      <div class="inner">
+			<b><div id="clockbox" style="font-size:;text-align:center;color:white;"></div></b>
+
+
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

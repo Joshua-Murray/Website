@@ -1,0 +1,359 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+    <title>Openet | Previous Guest</title>
+    
+    <link rel="stylesheet" href="css/foundation.css"/>
+	<link rel="stylesheet" href="lib/themes/default.css" id="theme_base">
+	<link rel="stylesheet" href="lib/themes/default.date.css" id="theme_date">
+	<link rel="stylesheet" href="lib/themes/default.time.css" id="theme_time">
+    
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/vendor/jquery.js"></script> 
+    <script src="js/foundation.js"></script> 
+    <script src="js/foundation.dropdown.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
+</head>
+  
+<body>
+<!--Search Function-->
+<script type="text/javascript" >
+        $(function() {
+            $("#search").click(function() {
+                var fname = $("#fnameSearch").val();
+                var sname = $("#snameSearch").val();
+                var company = $("#companySearch").val();
+                var phone = $("#phoneSearch").val();
+
+                
+                    $.ajax({
+                        type: "POST",
+                        url: "testopenet.php",
+                        data: {
+                            action: 'search',
+                            fname: fname,
+                            sname: sname,
+                            company: company,
+                            phone: phone,
+                        },
+                        success: function(responce){
+							 $('#resultTable').html(responce);
+							//alert(responce);
+                          //  $('.success').fadeIn(200).show();
+                            //$('.error').fadeOut(200).hide();
+                        }
+                    });
+             
+               return false;
+             });
+         });
+    </script>
+<!--Modal Revealing-->
+<!-- Top Bar Navigation -->
+	<nav class="top-bar" data-topbar>
+		<section>
+			<ul class="title-area">
+              <!-- Title Area -->
+              <li class="name"><h1><a href="index.html"></a></h1></li>
+			</ul>
+      
+            <div class="toggle-topbar menu-icon">
+				<a href="#"><span>MENU</span></a>
+			</div>
+			
+			<ul>
+				<section class="top-bar-section">
+					<!-- Right Nav Section -->
+						<ul class="right">
+							<li class="divider"></li>
+							<li><a href="index.html">Home</a></li>
+							<li class="divider"></li>			  
+							<li class="has-form"><a href="all.php" name="currentPeople" onclick="printAll()"  name="printall" class="button alert">Print all at Openet</a></li>
+						</ul>
+				</section>
+			</ul>
+		</section>  
+    </nav>
+<!-- End Top Bar Navigation -->
+
+
+</script>
+
+<!-- Top Banner -->
+<div class="show-for-medium-up">
+	<div class="topbannerrest">
+		<div class="row">
+			<br>
+			<div class="medium-12 large-12 columns">
+				<img src="css/openet_logo_lg.png">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Top Banner -->
+  
+<!-- Title -->
+<div class="row">
+	<div class="large-12 columns">
+		<br>
+		<h3>Openet Guest Log System</h3>
+		<a href="index.html" class="button openet align right tiny">Go Back</a>
+		<h5>Previous Guest</h5>
+    </div>
+    <hr><br>
+</div>
+<!-- End Title -->
+
+<!-- Previous Guest Search -->
+<div class="row">
+    <div class="large-12 columns">
+		<div class="section-container tabs" data-section>
+            <section class="section">
+                <div class="content" data-slug="panel1">
+					<div class="row collapse">
+						<div class="row">
+						<form>
+							<div class="large-2 columns">
+								<input type="text" id="fnameSearch" placeholder="First name" />
+							</div>
+							<div class="large-2 columns">
+								<input type="text" id="snameSearch" placeholder="Surname" />
+							</div>
+							<div class="large-2 column">
+								<input type="text" id="phoneSearch" placeholder="Phone No." />
+							</div>
+							<div class="large-2 column">
+								<input type="text" id="companySearch" placeholder="Company" />
+							</div>
+							<div class="large-4 column">
+								<input type="submit" href="" id="search" name="search" class="button button openet tiny expand">
+							</div>
+						</form>
+						</div>
+                    </div>
+				</div>
+			</section>
+        </div>
+	</div>
+</div>
+<!-- End Previous Guest Searcha -->
+
+<!-- Search Results  -->
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel"> 
+				<p>Search Results:</p>
+				<center>
+					<table id="">
+						<thead>						
+							<tr>
+								<th width="200">ID</th>
+								<th width="200">First Name</th>
+								<th width="200">Surname</th>
+								<th width="200">Company</th>
+								<th width="200">Phone Number</th>
+								<th width="200">Edit & Print</th>
+								<th width="200">Delete Profile</th>
+							</tr>
+						</thead>
+						<tbody id="resultTable">
+							
+	
+					</tbody>
+				</table>
+			</center>
+		</div>
+	</div>
+</div>
+<!-- End Search Resutlts -->
+<form id=blankForm>
+
+</form>
+
+<!-- Reveal Modal to Show a Guests Profile When Selected from Search Results --> 
+<div id="myModal" class="reveal-modal small" data-reveal>
+	<h2>Edit Guest</h2>
+	<hr>
+	<h6>Changes to visitor's profiles are made permanently.</h6>
+  	<form>
+		<div class="row collapse">
+            <div class ="large-3 columns">
+				<label for="right-label" class="inline">First Name</label>
+			</div>
+			<div class="large-9 columns">
+				<input type="text" id="fnameSearch" name="fname" value="<?PHP echo $fname; ?>">
+			</div>
+		</div>
+					
+		<div class="row collapse">
+            <div class ="large-3 columns">
+				<label for="right-label" class="inline">Surname</label>
+			</div>
+			<div class="large-9 columns">
+				<input type="text" id="snameSearch" name="sname" value="<?PHP echo $sname; ?>">
+			</div>
+		</div>
+		
+		<div class="row collapse">
+            <div class ="large-3 columns">
+				<label for="right-label" class="inline">Company</label>
+			</div>
+			<div class="large-9 columns">
+				<input type="text" id="companySearch" name="company" value="<?PHP echo $company; ?>">
+			</div>
+		</div>
+					
+		<div class="row collapse">
+			<div class ="large-3 columns">
+				<label for="right-label" class="inline">Phone Number</label>
+			</div>
+			<div class="large-9 columns">
+				<input type="text" id="" name="phone" value="<?PHP echo $phone; ?>">
+			</div>
+		</div>
+					
+		<div class="row collapse">
+			<div class="large-3 column">
+				<label>Car Parking</label>
+			</div>
+			<div class="large-9 columns">
+				<ul class="button-group align left">
+						<li><input type="radio" name="carpark" value="1"><label for="carpark">Yes</label></li>
+						<li><input type="radio" name="carpark" value="0"><label for="carpark">No</label></li>
+				</ul>
+			</div>
+		</div>
+					
+		<div class="row collapse">
+            <div class ="large-3 columns">
+				<label for="right-label" class="inline">Car Registration</label>
+			</div>
+			<div class="large-9 columns">
+				<input type="text" id="" name="carreg" value="<?PHP echo $carreg; ?>">
+			</div>
+		</div>
+				
+		<div class="row collapse">
+            <div class ="large-3 columns">
+				<label for="right-label" class="inline">Visiting</label>
+			</div>
+			<div class="large-9 columns">
+				<input type="text" id="visit" name="visit" value="<?PHP echo $visiting; ?>">
+			</div>
+		</div>
+		
+		<div class="row collapse">
+            <div class ="large-3 columns">
+				<label for="right-label" class="inline">Date & Time of Arrival</label>
+			</div>
+			<div class="large-9 columns">
+				<div class="large-6 columns inputdate">
+					<input id="darrivedate" name="darrive" class="fieldset__input js__datepicker" placeholder="Date here" type="text" placeholder="">
+				</div>
+				<div class="large-6 columns inputdate">
+					<div class="exapnd">
+					<input id="darrivetime" class="fieldset__input js__timepicker" type="text" placeholder="Time here">
+					</div>
+				</div>
+			</div>	
+		</div>
+
+		<!-- Javascript Print Function -->
+		<script language="javascript" type="text/javascript">
+
+			function SendtoLabel() {
+				//Send Name to Label For Printing
+				var LabelName = document.getElementByClassName('fname').value + " " + document.getElementByClassName('sname').value;
+				document.getElementById('LabelVal1').innerHTML = LabelName;
+				//Send Company to Label For Printing
+				var LabelCompany = document.getElementByClassName('company').value;
+				document.getElementById('LabelVal2').innerHTML = LabelCompany;
+				//Send Visiting to Label For Printing
+				var LabelVisiting = document.getElementByClassName('visit').value;
+				document.getElementById('LabelVal3').innerHTML = "Visiting " + LabelVisiting;
+						}
+
+			function printDiv(printlabel) {
+				SendtoLabel();
+				//Get the HTML of div
+				var divElements = document.getElementById(printlabel).innerHTML;
+				//Get the HTML of whole page
+				var oldPage = document.body.innerHTML;
+				//Reset the page's HTML with div's HTML only
+				document.body.innerHTML = "<html><head><title></title></head><body>" + divElements + "</body>";
+				//Print Page
+				window.print();
+				//Return To HomePage
+				window.location="index.html";
+										
+							}
+		</script>
+			
+			<ul class="button-group align right">
+  				<li><a href="" name="saveprint" onclick="javascript:printDiv('printlabel')" class="button openet">Save and Print</a></li>
+				<li><a href="#" data-reveal-id="secondModal" class="button openet">Delete Profile</a></li>
+			</ul>
+			
+			<a class="close-reveal-modal">&#215;</a>						
+		</div>
+</div>
+<div id="message">
+
+</div>
+<!-- End Reveal Modal -->
+
+<!-- Label Layout -->
+<!--<div id="printlabel" class="printlabel" style="display: none;">	
+	<div class="row">
+    		<div class="large-12 columns" style="width:500px; height:100px; border:1px solid black;">
+			<img src="img/openet/icon.jpg" style="max-width: 95px; max-height: 95px" alt="some_text">
+			<div id="LabelVal1"></div>
+			<div id="LabelVal2"></div>
+			<div id="LabelVal3"></div>	
+		</div>
+	</div>
+</div>-->
+<!-- End Label -->
+  
+<!-- Second Reveal Modal That Reveals When User Attempts to Delete a Profile -->
+<div id="secondModal" class="reveal-modal small" data-reveal>
+	<p>Are you sure you want to delete this profile? This action cannot be undone.</p>
+	<ul class="button-group align right">
+		<li><a href="#" name="delete" class="button openet">Delete</a></li>
+		<li><a href="#" data-reveal-id="myModal" class="button openet">Cancel</a></li>
+	</ul>
+</div>
+<!-- End Second Reveal Modal -->
+
+<!-- Foundation Script -->
+<script>
+  document.write('<script src=js/vendor/' +
+  ('__proto__' in {} ? 'zepto' : 'jquery') +
+  '.js><\/script>')
+</script>
+
+<script src="js/foundation.min.js"></script>
+<script>
+	$(document).foundation();
+</script>
+<!-- End Foundation Script -->
+
+<!-- Date and Time Picker -->
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script>window.jQuery||document.write('<script src="tests/jquery.2.0.0.js"><\/script>')</script>
+<script src="lib/picker.js"></script>
+<script src="lib/picker.date.js"></script>
+<script src="lib/picker.time.js"></script>
+<script src="lib/legacy.js"></script>
+<script src="demo/scripts/demo.js"></script>
+<script src="demo/scripts/rainbow.js"></script>
+
+</body>
+</html>
+
+

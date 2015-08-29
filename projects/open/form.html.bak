@@ -1,0 +1,326 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+	<title>Openet | New Guest</title>
+    
+	<link rel="stylesheet" href="css/foundation.css" />
+	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/vendor/modernizr.js"></script>
+	<script src="js/vendor/jquery.js"></script> 
+	<script src="js/foundation.js"></script> 
+	<script src="js/foundation.dropdown.js"></script>
+</head>
+  
+
+<body>
+<!-- AJAX PHP on button press -->
+<script>
+        function printAll() {                                                               
+               window.location="all.php";
+               window.print();
+               window.location="index.html";
+                                              }
+</script>
+
+<script type="text/javascript" >
+        $(function() {
+            $("#saveprint").click(function() {
+                var fname = $("#fname").val().toUpperCase();
+                var sname = $("#sname").val().toUpperCase();
+                var company = $("#company").val().toUpperCase();
+                var phone = $("#phone").val().toUpperCase();
+                var carpark = $("#carpark").val().toUpperCase();
+                var carreg = $("#carreg").val().toUpperCase();
+                var visit = $("#visit").val().toUpperCase();
+             // var darrive = $("#darrive").val();
+
+                if(fname=='' || sname=='' || company=='' || phone=='' || carpark=='' || visit=='') {
+                    //$('.success').fadeOut(200).hide();
+                    //$('.error').fadeIn(200).show();
+					alert("You must fill out all the fields!")
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "testopenet.php",
+                        data: {
+                            action: 'insert',
+                            fname: fname,
+                            sname: sname,
+                            company: company,
+                            phone: phone,
+                            carpark: carpark,
+                            carreg: carreg,
+                            visit: visit
+                        },
+                        success: function(){
+							printDiv("printlabel");
+							//document.getElementById("errorSuccess").value();
+                          //  $('.success').fadeIn(200).show();
+                            //$('.error').fadeOut(200).hide();
+                        }
+                    });
+                 }
+               return false;
+             });
+         });
+    </script>
+
+<!-- Car Check -->
+
+<script type="text/javascript">
+        function carCheck()
+        {
+            if (document.getElementById('carpark').checked == true)
+            {document.getElementById('carreg').removeAttribute('disabled');}
+            else
+            {document.getElementById('carreg').setAttribute('disabled','disabled');}
+        }
+
+    </script>
+	
+<!-- Top Bar Navigation -->
+	<nav class="top-bar" data-topbar>
+		<section>
+			<ul class="title-area">
+              <!-- Title Area -->
+              <li class="name"><h1><a href="index.html"></a></h1></li>
+			</ul>
+      
+            <div class="toggle-topbar menu-icon">
+				<a href="#"><span>MENU</span></a>
+			</div>
+			
+			<ul>
+				<section class="top-bar-section">
+					<!-- Right Nav Section -->
+						<ul class="right">
+							<li class="divider"></li>
+							<li><a href="index.html">Home</a></li>
+							<li class="divider"></li>			  
+							<li class="has-form"><a href="all.php" name="currentPeople" onclick="printAll()"  name="printall" class="button alert">Print all at Openet</a></li>
+						</ul>
+				</section>
+			</ul>
+		</section>  
+    </nav>
+
+<!-- End Top Bar Navigation -->
+ 
+<!-- Top Banner -->
+<div class="show-for-medium-up">
+	<div class="topbannerrest">
+		<div class="row">
+			<br>
+			<div class="medium-12 large-12 columns">
+				<img src="css/openet_logo_lg.png">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Top Banner -->
+  
+<!-- Page Title -->
+<div class="row">
+	<div class="large-12 columns">
+      <div class="large-12 columns">
+		<br>
+        <h3>Openet Guest Log System</h3>
+		<a href="index.html" class="button openet align right tiny">Go Back</a>
+        <h5>New Guest</h5>
+      </div>
+    </div>
+    <hr><br>
+</div>
+<!-- End Page Title -->
+
+
+<!-- New Guest Form -->
+<div class="row">
+    <div class="large-12 columns">
+      <div class="section-container tabs" data-section>
+            <section class="section">
+                <div class="content" data-slug="panel1">
+						<form id="newForm" method="post">
+						
+							<div class="row collapse">
+                              		<div class="large-1 columns">
+                                  		<label class="inline">First Name</label>
+                                	</div>
+									<div class="large-11 columns">
+										<input type="text" class="requiredinput" name="fname" id="fname" placeholder="First name here">
+									</div>
+							</div>
+                            
+							<div class="row collapse">
+                              		<div class="large-1 columns">
+                                  		<label class="inline">Surname</label>
+                                	</div>
+									<div class="large-11 columns">
+										<input type="text" name="sname" class="requiredinput"id="sname" placeholder="Surname here">
+									</div>
+							</div>
+
+                            <div class="row collapse">
+									<div class="large-1 columns">
+										<label class="inline">Company</label>
+									</div>
+									<div class="large-11 columns">
+										<input type="text" name="company" class="requiredinput"id="company" placeholder="Company name here">
+									</div>
+                            </div>
+							
+							<div class="row collapse">
+								<div class="large-1 columns">
+                                  <label class="inline">Phone Number</label>
+								</div>
+								<div class="large-11 columns">
+                                  <input type="text" name="phone" id="phone"class="requiredinput" placeholder="Phone number here">
+								</div>
+                            </div>
+    
+							<div class="row collapse">
+								<div class="large-1 columns">
+                                  <label class="inline align">Visiting</label>
+								</div>
+								<div class="large-11 columns">
+								  <input type="text" name="visit" id="visit"class="requiredinput" placeholder="Purpose of guests visit">
+								</div>
+							</div>
+							
+							<div class="row collapse">
+								<div class="large-1 columns">
+                                  <label class="inline align">Arrival Time</label>
+								</div>
+								<div class="large-11 columns">
+									<input type="text" name="darrive" class="requiredinput"id="darrive">
+								</div>
+							</div>
+							
+							<!-- Javascript Current Time For Receptionist To See -->
+							<script language="javascript" type="text/javascript">
+									document.getElementById('darrive').value = Date();
+							</script>
+							
+							<!-- Javascript Print Function -->
+							<script language="javascript" type="text/javascript">
+
+									function SendtoLabel() {
+										//Send Name To Label For Printing
+										var LabelName = document.getElementById('fname').value.toUpperCase() + " " + document.getElementById('sname').value.toUpperCase();
+										document.getElementById('LabelVal1').innerHTML = LabelName;
+										//Send Company To Label For Printing
+										var LabelCompany = document.getElementById('company').value.toUpperCase();
+										document.getElementById('LabelVal2').innerHTML = LabelCompany;
+										//Send Visiting To Label For Printing
+										var LabelVisiting = document.getElementById('visit').value.toUpperCase();
+										document.getElementById('LabelVal3').innerHTML =LabelVisiting;
+										
+										
+									}
+
+									function printDiv(printlabel) {
+										SendtoLabel();
+										//Get the HTML of div
+										var divElements = document.getElementById(printlabel).innerHTML;
+										//Get The HTML Of Whole Page
+										var oldPage = document.body.innerHTML;
+										//Reset The Page's HTML With Div's HTML Only
+										document.body.innerHTML = "<html><head><title></title></head><body>" + divElements + "</body>";
+										//Print Page
+										window.print();
+										//Return To HomePage
+										window.location="index.html";
+															}
+							</script>
+							
+							<div class="row collapse">
+								<div class="large-1 column">
+									<label>Car Parking</label>
+								</div>
+								<div class="large-11 columns">
+									<ul class="button-group align left">
+										<li><input class="carYes" id="carpark" type="radio" name="carpark" value="1"><label for="carpark">Yes</label></li>
+										<li><input class="carNo" id="carpark" type="radio" name="carpark" value="0"><label for="carpark">No</label></li>
+									</ul>
+								</div>
+							</div>
+							
+							<!-- JQuery To Show Car Reg If Car Is Selected -->
+							<script>
+								$(document).ready(function(){
+									$(".carNo").click(function(){
+											$("#carreg").hide(500);
+											$("#carregl").hide(500);
+											$('#carreg').val('');
+										});
+									$(".carYes").click(function(){
+											$("#carreg").show(500);
+											$("#carregl").show(500);
+										});
+								});
+							</script>
+							
+							<div class="row collapse">
+                              <div class="large-1 columns">
+                                  <label id="carregl" style="display: none" class="inline">Car Registration</label>
+                              </div>
+                              <div class="large-11 columns">
+                                  <input type="text" id="carreg" name="carreg" style="display: none" placeholder="Registration here">
+                              </div>
+                            </div>
+							
+							<div class="row collapse">
+								<div class="large-12 columns">
+									<ul class="button-group align right">
+											<li><input type="submit" id="saveprint" class="button openet submit"></li>
+									</ul>
+								</div>
+							</div>
+                        </form>
+                </div>
+            </section>       
+		</div>
+	</div>   
+</div>
+<!-- End Form-->
+
+<!-- Label Layout -->
+<div style="display:none;" id="printlabel" class="printlabel">
+	<div class="row">
+		<div class="large-13">
+		<img id="layout" src="img/Openet/icon.jpg"></img>
+			
+			<div id="LabelVal1">Names</div>
+			
+			<div id="Company" style	="display:inline;"><div id="LabelVal2"style="display:inline;">Company Name</div></div>
+			<br>
+			<div id="Visiting"style="display:inline;"  >Visiting: <div id="LabelVal3" style="display:inline;">Name</div></div>
+			<div ID="Visitor">VISITOR</DIV>
+		</div>
+	</div>
+</div>
+<!-- End Label -->
+
+<!-- Foundation Script  -->
+<script>
+  document.write('<script src=js/vendor/' +
+  ('__proto__' in {} ? 'zepto' : 'jquery') +
+  '.js><\/script>')
+</script>
+
+<script src="js/foundation.min.js"></script>
+<script>
+	$(document).foundation();
+</script>
+<!-- End Foundation Script -->
+
+</body>
+</html>
